@@ -1,0 +1,42 @@
+
+  
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-size: large;
+    font-style: normal;
+}
+
+.terminal {
+    width: 50vw;
+    height: 50vh;
+    background-color: red;
+    overflow-y: auto;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    padding: 0px 5px;
+}
+
+#inputHistory{
+    height: auto;
+}
+
+#typingArea{
+    background-color: green;
+}
+
+#terminalInput {
+    width: 80%;
+}
+.typingAreaElements{
+    display: inline-block;
+}   
