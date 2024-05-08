@@ -1,4 +1,7 @@
-
+input:focus {
+    outline: none;
+  }
+  
   
 * {
     margin: 0;
@@ -6,15 +9,21 @@
     box-sizing: border-box;
     font-family: "VT323", monospace;
     font-weight: 400;
-    font-size: large;
+    font-size: 30px;
     font-style: normal;
+    background-color: black;
+
 }
 
-.terminal {
-    width: 50vw;
-    height: 50vh;
-    background-color: red;
-    overflow-y: auto;
+
+
+#terminal {
+    background-image: none;
+    width: 60vw;
+    height: 60vh;
+    background-color: black;
+    color: white;
+    overflow-y: hidden;
     
     position: absolute;
     top:0;
@@ -23,20 +32,51 @@
     right: 0;
     margin: auto;
 
+    display: flex;
+    flex-direction: column;
+    overflow-anchor: auto;
+
     padding: 0px 5px;
+    border: solid white;
+    border-top: 1rem solid;
 }
 
 #inputHistory{
     height: auto;
+    background-color: black;
 }
 
 #typingArea{
-    background-color: green;
+    background-color: black;
+    display: flex;
 }
 
 #terminalInput {
-    width: 80%;
+    background-image: none;
+    background-color: black;
+    border: none;
+    color: white;
+    flex: 1;
 }
-.typingAreaElements{
-    display: inline-block;
-}   
+
+
+p{
+    background-image: none;
+}
+
+
+
+#vamosver img {
+    position: absolute;
+    top: 5vh; /* Adjust as needed */
+    left: 20vw; /* Adjust as needed */
+    width: 15vw;
+    height: 15vh;
+    transition: all .7s ease-in-out;
+    z-index: 2;
+}
+
+  img:hover{
+    transform: scale(1.1);
+
+  }  
