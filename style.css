@@ -1,7 +1,12 @@
 input:focus {
     outline: none;
   }
-  
+
+ body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
   
 * {
     margin: 0;
@@ -9,20 +14,18 @@ input:focus {
     box-sizing: border-box;
     font-family: "VT323", monospace;
     font-weight: 400;
-    font-size: 30px;
+    font-size: 2vw;
     font-style: normal;
-    background-color: black;
+    background-color: var(--black);
 
 }
-
-
 
 #terminal {
     background-image: none;
     width: 60vw;
     height: 60vh;
-    background-color: black;
-    color: white;
+    background-color: var(--black);
+    color: var(--white);
     overflow-y: hidden;
     
     position: absolute;
@@ -37,46 +40,97 @@ input:focus {
     overflow-anchor: auto;
 
     padding: 0px 5px;
-    border: solid white;
+    border: solid var(--white);
     border-top: 1rem solid;
 }
 
 #inputHistory{
     height: auto;
-    background-color: black;
+    background-color: var(--black);
 }
 
 #typingArea{
-    background-color: black;
+    background-color: var(--black);
     display: flex;
 }
 
 #terminalInput {
     background-image: none;
-    background-color: black;
+    background-color: var(--black);
     border: none;
-    color: white;
+    color: var(--white);
     flex: 1;
 }
-
 
 p{
     background-image: none;
 }
 
-
-
-#vamosver img {
-    position: absolute;
-    top: 5vh; /* Adjust as needed */
-    left: 20vw; /* Adjust as needed */
-    width: 15vw;
-    height: 15vh;
-    transition: all .7s ease-in-out;
-    z-index: 2;
+#backgroundCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%;  
+    z-index: -1; 
 }
 
-  img:hover{
-    transform: scale(1.1);
 
-  }  
+/* ------------------------ Colors ------------------------ */
+
+:root {
+    --white: #EDEADE;
+    --black: #000000;
+  }
+
+.goldenGlow {
+    white-space: pre-wrap;
+    color: #ffd166;
+    text-shadow:
+    0 0 1px #000000,
+    0 0 2px #000000,
+    0 0 3px #ffd166,
+    0 0 4px #ffd166,
+    0 0 6px #ffd166,
+    0 0 8px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(0, 0, 0, 0.4); 
+}
+
+span {
+    white-space: pre-wrap;
+    color: rgb(0, 128, 0);
+    text-shadow:
+    0 0 1px #000000,
+    0 0 2px #000000,
+    0 0 3px rgb(0, 128, 0),
+    0 0 4px rgb(0, 128, 0),
+    0 0 6px rgb(0, 128, 0),
+    0 0 8px rgba(0, 0, 0, 0.4), 
+    0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.red {
+    white-space: pre-wrap;
+    color: rgb(255, 0, 0);
+    text-shadow:
+    0 0 1px #000000,
+    0 0 2px #000000,
+    0 0 3px rgb(255, 0, 0),
+    0 0 4px rgb(255, 0, 0),
+    0 0 6px rgb(255, 0, 0),
+    0 0 8px rgba(0, 0, 0, 0.4),
+    0 0 10px rgba(0, 0, 0, 0.4)
+}
+
+.y{
+    white-space: pre-wrap;
+    color: rgb(255, 255, 0);
+    text-shadow:
+    0 0 1px #000000,
+    0 0 2px #000000,
+    0 0 3px rgb(255, 255, 0)
+    0 0 4px rgb(255, 255, 0),
+    0 0 8px rgb(255, 255, 0),
+    0 0 9px rgba(0, 0, 0, 0.4),
+    0 0 12px rgba(0, 0, 0, 0.4)
+}

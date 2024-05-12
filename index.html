@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+
+    <title>Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="aa.png">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="script.js" defer></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,20 +15,16 @@
     <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="vamosver">
-        <a href="https://pagedart.com#" target="_blank">
-            <img src="bb.png" alt="buttonpng"/>
-        </a>  
-    </div>
+    <canvas id="backgroundCanvas"></canvas>
     <div id="terminal" anchor>
         <div id="inputHistory"></div>
         <div id="typingArea">
-            <p class="typingAreaElements">C:\Users\marcos></p>
+            <p class="typingAreaElements">C:\Users\mr.kurtz></p>
             <input 
                 class="typingAreaElements" 
                 id="terminalInput"
                 autofocus 
-                onkeypress="myFunction(event)"
+                onkeypress="handleTypedInput(event)"
             >   
         </div>
     </div>
