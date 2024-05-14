@@ -30,9 +30,11 @@ function paginationButton(){
     inputHistory.innerHTML = ""
 
     let allText = [
-        "Lastly, I completed an internship at the University of Hamburg, where I primarily worked with JavaScript, allowing me to enhance my frontend development skills.",
-        "In total, I have accumulated over 3 years of experience in software development and maintenance",
-        "I am a motivated individual who believes that the learning process is continuous and eternal",
+        "Well, I'm one of those who believes in a continuous and permanent learning process.",
+        "I'm always working on personal projects to keep myself sharp.",
+        "Besides that, I am a motivated learner who loves what he does.",
+        "At the moment, I have been focusing my energy on improving my skills in JavaScript and its respective frameworks, both for frontend and backend development.",
+        "Additionally, I have also been paying special attention to learning PHP, already having developed my first projects with the language.",
         "<button class=\"paginationButtonLeft\" onclick=\"createPagination()\"></button>"    
     ]
 
@@ -57,7 +59,7 @@ function paginationButton(){
             clearInterval(interval);
         };
 
-    }, 1000);
+    }, 800);
 }
 
 function createPagination(event){
