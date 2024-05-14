@@ -2,30 +2,6 @@ let terminalInputValue;
 let inputHistory = document.getElementById("inputHistory")
 let terminal = document.getElementById("terminal")
 
-// const arrayStry = [
-// "Welcome to my portfolio page. Hello, I'm a software developer!!",
-// "Hello, I'm a software developer!!",
-// "Hello, I'm a software developer!!",
-// "try to write something funnnn"]
-
-
-// arrayStry.forEach((str, index) => {
-//     const p = document.createElement("div");
-//     inputHistory.appendChild(p);
-  
-//     setTimeout(function () {
-//       let delay = 0;
-//       for (let i = 0; i < str.length; i++) {
-//         const substring1 = str.substring(0, i + 1);
-//         setTimeout(function () {
-//           p.innerHTML = substring1;
-//           scrollTerminalToBottom();
-//         }, delay);
-//         delay += 50; // Increase delay for each character
-//       }
-//     }, index * 3000); // Adjust the initial delay as needed
-//   });
-
 function paginationButton(){
     inputHistory.innerHTML = ""
 
@@ -44,7 +20,7 @@ function paginationButton(){
         const p = document.createElement("div");
         inputHistory.appendChild(p);
         p.innerHTML = allText[i];
-        p.style.margin = "10px";
+        p.style.margin = "0.7vw";
 
         p.style.color = 'rgba(237, 234, 222, 0.05)';
         p.style.transition = 'color 1.0s ease';
@@ -62,15 +38,13 @@ function paginationButton(){
     }, 800);
 }
 
-function createPagination(event){
-    console.log(event)
-
+function createPagination(){
     inputHistory.innerHTML = ""
 
     const imgElement = document.createElement('img');
     imgElement.src = 'dd.png';
     imgElement.style.display = 'block';
-    imgElement.style.margin = '20px auto';
+    imgElement.style.margin = '1.3vw auto';
     imgElement.style.width = '13.2vw'; 
     imgElement.style.height = '13.2vw';
     imgElement.style.border = '0.3vw solid white' 
@@ -90,7 +64,7 @@ function createPagination(event){
         const p = document.createElement("div");
         inputHistory.appendChild(p);
         p.innerHTML = allText[i];
-        p.style.margin = "10px";
+        p.style.margin = "0.7vw";
 
         p.style.color = 'rgba(237, 234, 222, 0.05)';
         p.style.transition = 'color 1.0s ease';
@@ -116,7 +90,7 @@ function callTypewriter(str, delayIncrement){
     const substring1 = str.substring(0, i + 1);
     setTimeout(function () {
         p.innerHTML = substring1;
-        p.style.margin = "10px";
+        p.style.margin = "1.2vw";
         scrollTerminalToBottom();
     }, delay);
     delay += delayIncrement; 
@@ -169,9 +143,6 @@ function setup() {
     }  
 }
 
-function draw() {
-}
-
 function handleTypedInput(event){
 
     terminalInputValue = document.getElementById("terminalInput").value
@@ -207,7 +178,7 @@ function TerminalActions(text){
     }
 
     else if (text == "whoami"){
-        createPagination(event.key)
+        createPagination()
 
     }
 

@@ -39,7 +39,7 @@ input:focus {
     flex-direction: column;
     overflow-anchor: auto;
 
-    padding: 0px 5px;
+    padding: 0vw 0.3vw;
     border: solid var(--white);
     border-top: 1rem solid;
 }
