@@ -33,7 +33,7 @@ function paginationButton(){
         "Lastly, I completed an internship at the University of Hamburg, where I primarily worked with JavaScript, allowing me to enhance my frontend development skills.",
         "In total, I have accumulated over 3 years of experience in software development and maintenance",
         "I am a motivated individual who believes that the learning process is continuous and eternal",
-        "<button class=\"paginationButton\" onclick=\"createPagination()\"> <--- </button>"    
+        "<button class=\"paginationButtonLeft\" onclick=\"createPagination()\"></button>"    
     ]
 
     let i = 0;
@@ -57,10 +57,11 @@ function paginationButton(){
             clearInterval(interval);
         };
 
-    }, 1000);    
+    }, 1000);
 }
 
-function createPagination(){
+function createPagination(event){
+    console.log(event)
 
     inputHistory.innerHTML = ""
 
@@ -68,22 +69,17 @@ function createPagination(){
     imgElement.src = 'dd.png';
     imgElement.style.display = 'block';
     imgElement.style.margin = '20px auto';
-
-    imgElement.style.width = '200px'; 
-    imgElement.style.height = '200px';
+    imgElement.style.width = '13.2vw'; 
+    imgElement.style.height = '13.2vw';
     imgElement.style.border = '0.3vw solid white' 
-
-    // Make the image round
     imgElement.style.borderRadius = '50%';
 
     inputHistory.appendChild(imgElement)
 
     let allText = [
         "I'm Marcos, a software developer currently living in Hamburg, Germany.",
-        "I have accumulated over 3 years of experience in software development and code maintenance.",
-    //     "I have a background working with code maintenance in C# (.NET framework) for almost two years at a Brazilian company.",
-    //     "I developed my master's degree at the Polytechnic Institute of Bragança in Portugal, entitled 'Development of a database migration and compatibility system' where I worked extensively as a developer contracted by the institute, using technologies such as React, Node.js, and MongoDB for a period of one year while developing my thesis concurrently",
-        "<button class=\"paginationButton\" onclick=\"paginationButton()\"> ---> </button>"    
+        "Altogether, I have accumulated over 3 years of experience in software development and code maintenance.",
+        "<button class=\"paginationButtonRight\" onclick=\"paginationButton()\"></button>"    
     ]
 
     let i = 0;
@@ -209,7 +205,7 @@ function TerminalActions(text){
     }
 
     else if (text == "whoami"){
-        createPagination()
+        createPagination(event.key)
 
     }
 

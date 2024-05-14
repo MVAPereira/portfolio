@@ -136,18 +136,46 @@ span {
 }
 
 
-.paginationButton{
+.paginationButtonRight{
     color: var(--white);
     
     background-color: var(--black);
     margin: 0 auto;
-    width: 7vw;
+    width: 4.2vw;
     height: 7vh;
     display: block;
 
+    background-image: url('buttonRight.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    cursor: pointer;
     border-style: none;
 }
-.paginationButton:hover{
-    color: var(--black);
-    background-color: var(--white);
+
+.paginationButtonRight:hover {
+    opacity: 0.7; 
+  }
+
+.paginationButtonLeft{
+    color: var(--white);
+
+    background-color: var(--black);
+    margin: 0 auto;
+    width: 4.2vw;
+    height: 7vh;
+    display: block;
+
+    background-image: url('buttonLeft.png');
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    cursor: pointer;
+    border-style: none;
 }
+
+.paginationButtonLeft:hover {
+    opacity: 0.7; 
+  }
+
+
