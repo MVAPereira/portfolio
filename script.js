@@ -2,8 +2,12 @@ let terminalInputValue;
 let inputHistory = document.getElementById("inputHistory")
 let terminal = document.getElementById("terminal")
 
-function paginationButton(){
+function cleanInputHistory(){
     inputHistory.innerHTML = ""
+}
+
+function paginationButton(){
+    cleanInputHistory()
 
     let allText = [
         "Well, I'm one of those who believes in a continuous and permanent learning process.",
@@ -39,7 +43,7 @@ function paginationButton(){
 }
 
 function createPagination(){
-    inputHistory.innerHTML = ""
+    cleanInputHistory()
 
     const imgElement = document.createElement('img');
     imgElement.src = 'dd.png';
@@ -164,7 +168,7 @@ function scrollTerminalToBottom(){
 
 function TerminalActions(text){
     if (text == "clear"){ 
-       inputHistory.innerHTML = ""
+        cleanInputHistory()
     }
 
     else if (text == "help"){
