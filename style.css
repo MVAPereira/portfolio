@@ -134,3 +134,20 @@ span {
     0 0 9px rgba(0, 0, 0, 0.4),
     0 0 12px rgba(0, 0, 0, 0.4)
 }
+
+
+.paginationButton{
+    color: var(--white);
+    
+    background-color: var(--black);
+    margin: 0 auto;
+    width: 7vw;
+    height: 7vh;
+    display: block;
+
+    border-style: none;
+}
+.paginationButton:hover{
+    color: var(--black);
+    background-color: var(--white);
+}

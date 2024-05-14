@@ -26,15 +26,88 @@ let terminal = document.getElementById("terminal")
 //     }, index * 3000); // Adjust the initial delay as needed
 //   });
 
+function paginationButton(){
+    inputHistory.innerHTML = ""
+
+    let allText = [
+        "Lastly, I completed an internship at the University of Hamburg, where I primarily worked with JavaScript, allowing me to enhance my frontend development skills.",
+        "In total, I have accumulated over 3 years of experience in software development and maintenance",
+        "I am a motivated individual who believes that the learning process is continuous and eternal",
+        "<button class=\"paginationButton\" onclick=\"createPagination()\"> <--- </button>"    
+    ]
+
+    let i = 0;
+    const interval = setInterval(() => {
+
+        const p = document.createElement("div");
+        inputHistory.appendChild(p);
+        p.innerHTML = allText[i];
+        p.style.margin = "10px";
+
+        p.style.color = 'rgba(237, 234, 222, 0.05)';
+        p.style.transition = 'color 1.0s ease';
+    
+
+        void p.offsetWidth;
+    
+        p.style.color = 'rgba(237, 234, 222, 1)'; 
+        i++;
+
+        if(i == allText.length){
+            clearInterval(interval);
+        };
+
+    }, 1000);    
+}
+
 function createPagination(){
-    const p = document.createElement("div");
-    inputHistory.appendChild(p);
 
-    const btnLeft = document.createElement("button");
-    const btnRight = document.createElement("button");
+    inputHistory.innerHTML = ""
 
-    inputHistory.appendChild(btnLeft);
-    inputHistory.appendChild(btnRight);
+    const imgElement = document.createElement('img');
+    imgElement.src = 'dd.png';
+    imgElement.style.display = 'block';
+    imgElement.style.margin = '20px auto';
+
+    imgElement.style.width = '200px'; 
+    imgElement.style.height = '200px';
+    imgElement.style.border = '0.3vw solid white' 
+
+    // Make the image round
+    imgElement.style.borderRadius = '50%';
+
+    inputHistory.appendChild(imgElement)
+
+    let allText = [
+        "I'm Marcos, a software developer currently living in Hamburg, Germany.",
+        "I have accumulated over 3 years of experience in software development and code maintenance.",
+    //     "I have a background working with code maintenance in C# (.NET framework) for almost two years at a Brazilian company.",
+    //     "I developed my master's degree at the Polytechnic Institute of Bragança in Portugal, entitled 'Development of a database migration and compatibility system' where I worked extensively as a developer contracted by the institute, using technologies such as React, Node.js, and MongoDB for a period of one year while developing my thesis concurrently",
+        "<button class=\"paginationButton\" onclick=\"paginationButton()\"> ---> </button>"    
+    ]
+
+    let i = 0;
+    const interval = setInterval(() => {
+
+        const p = document.createElement("div");
+        inputHistory.appendChild(p);
+        p.innerHTML = allText[i];
+        p.style.margin = "10px";
+
+        p.style.color = 'rgba(237, 234, 222, 0.05)';
+        p.style.transition = 'color 1.0s ease';
+    
+
+        void p.offsetWidth;
+    
+        p.style.color = 'rgba(237, 234, 222, 1)'; 
+        i++;
+
+        if(i == allText.length){
+            clearInterval(interval);
+        };
+
+    }, 1000);    
 }
 
 function callTypewriter(str, delayIncrement){
@@ -53,8 +126,7 @@ function callTypewriter(str, delayIncrement){
 }
     
 let inicialText = `
-Hey there, <span class="y">Greetings</span><br>
-This is my portfolio page! <br>
+Hey there, <span class="y">Greetings!</span> This is my portfolio page.<br>
 You might consider typing the <span>-help</span> command.  <br>
 `
 callTypewriter(inicialText, 50)
@@ -88,11 +160,13 @@ function setup() {
     background(0);
     let cnv = createCanvas(windowWidth, windowHeight)
     cnv.mouseMoved(generateCircles);
-    for(i=0; i<200;i++){
+    for(i=0; i<150;i++){
         fill(getRandomColor());
         noStroke()
-        let circleMinSize = width* 0.04
-        let circleMaxSize = width * 0.08
+        let circleMinSize = Math.floor(width* 0.035)
+        let circleMaxSize = Math.floor(width * 0.085)
+
+        console.log(circleMaxSize, circleMinSize)
         circle(random(width), random(height), random(circleMinSize, circleMaxSize))
     }  
 }
@@ -135,13 +209,7 @@ function TerminalActions(text){
     }
 
     else if (text == "whoami"){
-
-        let inicialText = 
-        ` 
-            rwerwerwerwerwerwe rwerwerwerwerewre <br>
-            eeqweqweqweqweqweqw e qweq we qw e qweq <br>
-        `
-        callTypewriter(inicialText, 10)
+        createPagination()
 
     }
 
