@@ -7,7 +7,7 @@ input:focus {
     padding: 0;
     overflow: hidden;
 }
-  
+
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +18,10 @@ input:focus {
     font-style: normal;
     background-color: var(--black);
 
+}
+
+p{
+    background-image: none;
 }
 
 #terminal {
@@ -62,10 +66,6 @@ input:focus {
     flex: 1;
 }
 
-p{
-    background-image: none;
-}
-
 #backgroundCanvas {
     position: fixed;
     top: 0;
@@ -74,6 +74,8 @@ p{
     height: 100%;  
     z-index: -1; 
 }
+
+/* ------------------------ Contact buttons ------------------------ */
 
 #buttonsContainer{
     width: 20vw;
@@ -84,15 +86,12 @@ p{
     text-align: center;
     flex-direction: row;
 
-    margin: 10px;
-    padding: 20px;
     
     position: absolute;
-    bottom: 50px;
+    bottom: 5vh;
     left: 50%;
     transform: translateX(-50%);
 }
-
 .button {
     display: flex;
     align-items: center;
@@ -107,16 +106,18 @@ p{
     background-size: cover; 
     background-repeat: no-repeat; 
     background-position: center; 
-    padding: 38px 40px;
 
-    border-radius: 5px;
+    width: 4vw; 
+    height: 3.8vw; 
+
+    border-radius: 0.3vw;
     border: none;
 
-    box-shadow: 0px 10px 0px #c2c0ba;
+    box-shadow: 0vw 0.45vw 0vw #c2c0ba;
 }
 
 .button a:active{
-    transform: translateY(10px);
+    transform: translateY(0.45vw);
     box-shadow: 0 0 0 #c2c0ba;
     filter: brightness(0.8);
 }
@@ -130,7 +131,7 @@ p{
 .button_lk{
     background-image: url('lk_icon.png');
 }
-
+/* ------------------------ ---------------------------------------- */
 
 
 
@@ -154,8 +155,6 @@ p{
     0 0 8px rgba(0, 0, 0, 0.4),
     0 0 10px rgba(0, 0, 0, 0.4); 
 }
-
-
 
 span {
     white-space: pre-wrap;
@@ -195,8 +194,9 @@ span {
     0 0 9px rgba(0, 0, 0, 0.4),
     0 0 12px rgba(0, 0, 0, 0.4)
 }
+/* ------------------------------------------------------------------- */
 
-
+/* ------------------------ Pagination buttons ------------------------ */
 .paginationButtonRight{
     color: var(--white);
     
@@ -237,6 +237,8 @@ span {
 
 .paginationButtonLeft:hover {
     opacity: 0.7; 
-  }
+}
+/* ------------------------------------------------------------------- */
+
 
 
