@@ -75,6 +75,64 @@ p{
     z-index: -1; 
 }
 
+#buttonsContainer{
+    width: 20vw;
+    height: 10vh;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    flex-direction: row;
+
+    margin: 10px;
+    padding: 20px;
+    
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    background: transparent;
+}
+
+.button a{ 
+    text-align: center;
+    text-decoration:none;
+    display:block;
+
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: center; 
+    padding: 38px 40px;
+
+    border-radius: 5px;
+    border: none;
+
+    box-shadow: 0px 10px 0px #c2c0ba;
+}
+
+.button a:active{
+    transform: translateY(10px);
+    box-shadow: 0 0 0 #c2c0ba;
+    filter: brightness(0.8);
+}
+
+.button_git{
+    background-image: url('git_icon.png');
+}
+.button_email{
+    background-image: url('email_icon.png');
+}
+.button_lk{
+    background-image: url('lk_icon.png');
+}
+
+
+
 
 /* ------------------------ Colors ------------------------ */
 
@@ -84,6 +142,7 @@ p{
   }
 
 .goldenGlow {
+    margin-top: 2vw;
     white-space: pre-wrap;
     color: #ffd166;
     text-shadow:
@@ -95,6 +154,8 @@ p{
     0 0 8px rgba(0, 0, 0, 0.4),
     0 0 10px rgba(0, 0, 0, 0.4); 
 }
+
+
 
 span {
     white-space: pre-wrap;

@@ -2,20 +2,30 @@ let terminalInputValue;
 let inputHistory = document.getElementById("inputHistory")
 let terminal = document.getElementById("terminal")
 
+let inicialText = `
+Hey there, <span class="y">Greetings!</span> This is my portfolio page.<br>
+You might consider typing the <span>-help</span> command.  <br>
+`
+callTypewriter(inicialText, 50)
+
 function cleanInputHistory(){
     inputHistory.innerHTML = ""
 }
 
-function paginationButton(){
+function whoamiSecondPage(){
     cleanInputHistory()
 
+    const p = document.createElement("div");
+    inputHistory.appendChild(p);
+    p.innerHTML = "Well, I'm one of those who believes in a continuous and permanent learning process."
+    p.style.margin = "0.7vw";
+
     let allText = [
-        "Well, I'm one of those who believes in a continuous and permanent learning process.",
         "I'm always working on personal projects to keep myself sharp.",
         "Besides that, I am a motivated learner who loves what he does.",
         "At the moment, I have been focusing my energy on improving my skills in JavaScript and its respective frameworks, both for frontend and backend development.",
         "Additionally, I have also been paying special attention to learning PHP, already having developed my first projects with the language.",
-        "<button class=\"paginationButtonLeft\" onclick=\"createPagination()\"></button>"    
+        "<button class=\"paginationButtonLeft\" onclick=\"whoamiFirstPage()\"></button>"    
     ]
 
     let i = 0;
@@ -39,10 +49,10 @@ function paginationButton(){
             clearInterval(interval);
         };
 
-    }, 800);
+    }, 700);
 }
 
-function createPagination(){
+function whoamiFirstPage(){
     cleanInputHistory()
 
     const imgElement = document.createElement('img');
@@ -59,7 +69,7 @@ function createPagination(){
     let allText = [
         "I'm Marcos, a software developer currently living in Hamburg, Germany.",
         "Altogether, I have accumulated over 3 years of experience in software development and code maintenance.",
-        "<button class=\"paginationButtonRight\" onclick=\"paginationButton()\"></button>"    
+        "<button class=\"paginationButtonRight\" onclick=\"whoamiSecondPage()\"></button>"    
     ]
 
     let i = 0;
@@ -83,7 +93,7 @@ function createPagination(){
             clearInterval(interval);
         };
 
-    }, 1000);    
+    }, 700);    
 }
 
 function callTypewriter(str, delayIncrement){
@@ -100,14 +110,7 @@ function callTypewriter(str, delayIncrement){
     delay += delayIncrement; 
     }
 }
-    
-let inicialText = `
-Hey there, <span class="y">Greetings!</span> This is my portfolio page.<br>
-You might consider typing the <span>-help</span> command.  <br>
-`
-callTypewriter(inicialText, 50)
-
-    
+       
 function getRandomColor() {
 
     const colors = [
@@ -122,12 +125,17 @@ function getRandomColor() {
     return colors[randomIndex];
 }
 
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    generateCircles();
+}
+
 function generateCircles(){
     for(i=0; i<6;i++){
         fill(getRandomColor());
         noStroke()
-        let circleMinSize = width* 0.04
-        let circleMaxSize = width * 0.07
+        let circleMinSize = width* 0.035
+        let circleMaxSize = width * 0.085
         circle(random(width), random(height), random(circleMinSize, circleMaxSize))
     }
 }
@@ -175,15 +183,24 @@ function TerminalActions(text){
         let inicialText = 
         ` 
         <span class="goldenGlow"> -whoami      </span>You can get to know me a bit<br>
-        <span class="goldenGlow"> -clear       </span>That one is quite obvious<br>
+        <span class="goldenGlow"> -clear       </span>Well, guess what?<br>
         <span class="goldenGlow"> -projects    </span>Get the link of some of my projects :)<br>
+        <span class="goldenGlow"> -contact     </span>All means available to contact me<br>
         `
         callTypewriter(inicialText, 10)
     }
 
     else if (text == "whoami"){
-        createPagination()
+        whoamiFirstPage()
 
+    }
+
+    else if(text == "projects"){
+        whoamiFirstPage()
+    }
+
+    else if(text == "contact"){
+        whoamiFirstPage()
     }
 
     else {
