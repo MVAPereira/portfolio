@@ -1,6 +1,6 @@
 input:focus {
     outline: none;
-  }
+}
 
  body, html {
     margin: 0;
@@ -22,6 +22,22 @@ input:focus {
 
 p{
     background-image: none;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
 }
 
 #terminal {
@@ -75,10 +91,11 @@ p{
     z-index: -1; 
 }
 
+
 /* ------------------------ Contact buttons ------------------------ */
 
 #buttonsContainer{
-    width: 20vw;
+    width: 22vw;
     height: 10vh;
     background: transparent;
     display: flex;
@@ -92,6 +109,7 @@ p{
     left: 50%;
     transform: translateX(-50%);
 }
+
 .button {
     display: flex;
     align-items: center;
@@ -108,7 +126,7 @@ p{
     background-position: center; 
 
     width: 4vw; 
-    height: 3.8vw; 
+    height: 3.9vw; 
 
     border-radius: 0.3vw;
     border: none;
@@ -125,25 +143,28 @@ p{
 .button_git{
     background-image: url('git_icon.png');
 }
+
+.button_project{
+    background-image: url('project_icon.png');
+}
+
 .button_email{
     background-image: url('email_icon.png');
 }
+
 .button_lk{
     background-image: url('lk_icon.png');
 }
 /* ------------------------ ---------------------------------------- */
-
-
 
 /* ------------------------ Colors ------------------------ */
 
 :root {
     --white: #EDEADE;
     --black: #000000;
-  }
+}
 
 .goldenGlow {
-    margin-top: 2vw;
     white-space: pre-wrap;
     color: #ffd166;
     text-shadow:
@@ -155,6 +176,37 @@ p{
     0 0 0.536vw rgba(0, 0, 0, 0.4), 
     0 0 0.67vw rgba(0, 0, 0, 0.4); 
 }
+
+.whiteGlow {
+    white-space: pre-wrap;
+    color: #FFF8DC; /* Custom white text color */
+    text-shadow:
+    0 0 0.033vw #000000,
+    0 0 0.067vw #000000, 
+    0 0 0.1vw #FFF8DC, 
+    0 0 0.134vw #FFF8DC, 
+    0 0 0.2vw #FFF8DC, 
+    0 0 0.268vw rgba(0, 0, 0, 0.7), /* Custom lighter white shadow */
+    0 0 0.335vw rgba(0, 0, 0, 0.7); /* Custom lighter white shadow */
+}
+
+.pinkGlow {
+    white-space: pre-wrap;
+    color: #D10363; /* Pink text color */
+    text-shadow:
+    0 0 0.033vw #000000,
+    0 0 0.067vw #D10363, 
+    0 0 0.1vw #D10363, 
+    0 0 0.134vw #D10363, 
+    0 0 0.2vw #D10363, 
+    0 0 0.268vw rgba(0, 0, 0, 0.5), /* Lighter pink shadow */
+    0 0 0.335vw rgba(0, 0, 0, 0.5); /* Lighter pink shadow */
+}
+
+
+
+
+
 
 span {
     white-space: pre-wrap;
@@ -216,7 +268,7 @@ span {
 
 .paginationButtonRight:hover {
     opacity: 0.7; 
-  }
+}
 
 .paginationButtonLeft{
     color: var(--white);

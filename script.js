@@ -104,7 +104,7 @@ function callTypewriter(str, delayIncrement){
     const substring1 = str.substring(0, i + 1);
     setTimeout(function () {
         p.innerHTML = substring1;
-        p.style.margin = "1.2vw";
+        p.style.margin = "0.9vw";
         scrollTerminalToBottom();
     }, delay);
     delay += delayIncrement; 
@@ -174,6 +174,61 @@ function scrollTerminalToBottom(){
     terminal.scrollTop = terminal.scrollHeight;
 }
 
+function showProjects(){
+    cleanInputHistory()
+    var myList = document.createElement('ul');
+
+    var urls = ['https://github.com/MVAPereira/sortit', 'https://example.com/page2', 'https://example.com/page3'];
+    var descriptions = ['<span class="pinkGlow">Sortit -> </span><span class="whiteGlow">a Google Chrome extension for displaying the GitHub PR page in an order other than the standard alphabetical one.</span>', '<span class="goldenGlow">Porfolio -> </span>', '<span class="goldenGlow">Movie diary -> </span>'];
+
+    urls.forEach(function(url, index) {
+
+        var listItem = document.createElement('li');
+        listItem.style.marginBottom = '2vw'; 
+
+
+        var pairDiv = document.createElement('div');
+        pairDiv.classList.add('button-description-pair');
+        pairDiv.style.display = 'flex'; // Use flexbox for layout
+        pairDiv.style.alignItems = 'center'; // Center items vertically
+        pairDiv.style.margin = '2vw'; // Add margin around the pairDiv
+
+        // Create a button container div
+        var buttonContainer = document.createElement('div');
+        buttonContainer.classList.add('button'); // Add class "button" to the container div
+        buttonContainer.style.marginRight = '2vw'; // Add margin between button and description
+
+        // Create an anchor element for the button
+        var buttonLink = document.createElement('a');
+        buttonLink.classList.add('button_project'); // Add class "button_git" to the anchor element
+        buttonLink.setAttribute('href', url); // Set the button link to the current URL in the array
+        buttonLink.setAttribute('target', '_blank'); // Open the link in a new tab
+
+        // Append the anchor element to the button container
+        buttonContainer.appendChild(buttonLink);
+
+        // Create a paragraph for the description
+        var descriptionPara = document.createElement('p');
+        descriptionPara.classList.add('button-description'); // Add class for styling
+        descriptionPara.innerHTML = descriptions[index]; // Set description text
+
+        // Append the button container and description paragraph to the pair div
+        pairDiv.appendChild(buttonContainer);
+        pairDiv.appendChild(descriptionPara);
+
+        // Append the pair div to the list item
+        listItem.appendChild(pairDiv);
+
+        // Append the list item to the list
+        myList.appendChild(listItem);
+    });
+
+    // Append the list to the inputHistory element
+    inputHistory.appendChild(myList);
+    scrollTerminalToBottom()
+
+}
+
 function TerminalActions(text){
     if (text == "clear"){ 
         cleanInputHistory()
@@ -185,7 +240,6 @@ function TerminalActions(text){
         <span class="goldenGlow"> -whoami      </span>You can get to know me a bit<br>
         <span class="goldenGlow"> -clear       </span>Well, guess what?<br>
         <span class="goldenGlow"> -projects    </span>Get the link of some of my projects :)<br>
-        <span class="goldenGlow"> -contact     </span>All means available to contact me<br>
         `
         callTypewriter(inicialText, 10)
     }
@@ -196,11 +250,7 @@ function TerminalActions(text){
     }
 
     else if(text == "projects"){
-        whoamiFirstPage()
-    }
-
-    else if(text == "contact"){
-        whoamiFirstPage()
+        showProjects()
     }
 
     else {
