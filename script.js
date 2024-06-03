@@ -179,47 +179,39 @@ function showProjects(){
     var myList = document.createElement('ul');
 
     var urls = ['https://github.com/MVAPereira/sortit', 'https://example.com/page2', 'https://example.com/page3'];
-    var descriptions = ['<span class="pinkGlow">Sortit -> </span><span class="whiteGlow">a Google Chrome extension for displaying the GitHub PR page in an order other than the standard alphabetical one.</span>', '<span class="goldenGlow">Porfolio -> </span>', '<span class="goldenGlow">Movie diary -> </span>'];
+    var descriptions = ['<span class="pinkGlow">Sortit -> </span><span class="whiteGlow">a Google Chrome extension for displaying the GitHub PR page in an order other than the standard alphabetical one.</span>', '<span class="pinkGlow">Porfolio -> </span>', '<span class="pinkGlow">Movie diary -> </span>'];
 
     urls.forEach(function(url, index) {
 
         var listItem = document.createElement('li');
         listItem.style.marginBottom = '2vw'; 
 
-
         var pairDiv = document.createElement('div');
         pairDiv.classList.add('button-description-pair');
-        pairDiv.style.display = 'flex'; // Use flexbox for layout
-        pairDiv.style.alignItems = 'center'; // Center items vertically
-        pairDiv.style.margin = '2vw'; // Add margin around the pairDiv
+        pairDiv.style.display = 'flex';
+        pairDiv.style.alignItems = 'center'; 
+        pairDiv.style.margin = '2vw'; 
 
-        // Create a button container div
         var buttonContainer = document.createElement('div');
-        buttonContainer.classList.add('button'); // Add class "button" to the container div
-        buttonContainer.style.marginRight = '2vw'; // Add margin between button and description
+        buttonContainer.classList.add('button'); 
+        buttonContainer.style.marginRight = '2vw';
 
-        // Create an anchor element for the button
         var buttonLink = document.createElement('a');
-        buttonLink.classList.add('button_project'); // Add class "button_git" to the anchor element
-        buttonLink.setAttribute('href', url); // Set the button link to the current URL in the array
-        buttonLink.setAttribute('target', '_blank'); // Open the link in a new tab
+        buttonLink.classList.add('button_project'); 
+        buttonLink.setAttribute('href', url); 
+        buttonLink.setAttribute('target', '_blank'); 
 
-        // Append the anchor element to the button container
         buttonContainer.appendChild(buttonLink);
 
-        // Create a paragraph for the description
         var descriptionPara = document.createElement('p');
-        descriptionPara.classList.add('button-description'); // Add class for styling
-        descriptionPara.innerHTML = descriptions[index]; // Set description text
+        descriptionPara.classList.add('button-description'); 
+        descriptionPara.innerHTML = descriptions[index]; 
 
-        // Append the button container and description paragraph to the pair div
         pairDiv.appendChild(buttonContainer);
         pairDiv.appendChild(descriptionPara);
 
-        // Append the pair div to the list item
-        listItem.appendChild(pairDiv);
 
-        // Append the list item to the list
+        listItem.appendChild(pairDiv);
         myList.appendChild(listItem);
     });
 
