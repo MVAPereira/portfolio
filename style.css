@@ -164,7 +164,6 @@ a:active {
     100% {
         transform: translateY(0.45vw);
         box-shadow: 0 0 0 #c2c0ba;
-        filter: brightness(0.8);
     }
 }
 
