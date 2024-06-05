@@ -46,7 +46,7 @@ a:active {
     height: 60vh;
     background-color: var(--black);
     color: var(--white);
-    overflow-y: hidden;
+    overflow-y: scroll;
     
     position: absolute;
     top:0;
@@ -292,5 +292,22 @@ span {
 }
 /* ------------------------------------------------------------------- */
 
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: black; 
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555; 
+}
 
