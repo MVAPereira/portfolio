@@ -178,8 +178,8 @@ function showProjects(){
     cleanInputHistory()
     var myList = document.createElement('ul');
 
-    var urls = ['https://github.com/MVAPereira/sortit', 'https://github.com/MVAPereira/listenUp', 'https://github.com/MVAPereira/portfolio'];
-    var descriptions = ['<span class="pinkGlow">Sortit -> </span><span class="whiteGlow">a Google Chrome extension for the GitHub PR page. </span>', '<span class="pinkGlow">ListenUp -> </span><span class="whiteGlow">a PHP project for language learning through listening practice.</span>', '<span class="pinkGlow">Portfolio -> </span><span class="whiteGlow">a console-like terminal built with pure JavaScript, HTML, and CSS.</span>'];
+    var urls = ['https://github.com/MVAPereira/sortit', 'https://github.com/MVAPereira/listenUp', 'https://github.com/MVAPereira/recipePost'];
+    var descriptions = ['<span class="pinkGlow">Sortit -> </span><span class="whiteGlow">a Google Chrome extension for the GitHub PR page. </span>', '<span class="pinkGlow">ListenUp -> </span><span class="whiteGlow">a PHP project for language learning through listening practice.</span>', '<span class="pinkGlow">RecipePost -> </span><span class="whiteGlow"> a PHP project to create images of recipes to share on social networks.</span>'];
 
     urls.forEach(function(url, index) {
 
