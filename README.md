@@ -8,6 +8,6 @@ The library __p5.js__ was used to create an interactive background that generate
 
 ![Main Sreen](https://github.com/MVAPereira/portfolio/blob/main/main_screen.png)
 
-Example usage of the __help__command within the terminal and its respective output.
+Example usage of the "help" command within the terminal and its respective output.
 
 ![Help Screen](https://github.com/MVAPereira/portfolio/blob/main/help_sreen.png)
